@@ -1,6 +1,8 @@
 # src/app/main.py
 import logging
+
 from fastapi import FastAPI
+
 from .config import settings
 
 logging.basicConfig(level=logging.INFO)
