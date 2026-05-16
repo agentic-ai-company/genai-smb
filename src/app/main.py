@@ -1,6 +1,8 @@
 # src/app/main.py
 import logging
+
 from fastapi import FastAPI
+
 from .config import settings
 
 logging.basicConfig(level=logging.INFO)
@@ -12,9 +14,11 @@ app = FastAPI(
     docs_url="/docs" if settings.debug else None,
 )
 
+
 @app.get("/health")
 async def health_check():
     return {"status": "ok", "environment": settings.environment}
+
 
 @app.get("/")
 async def root():
